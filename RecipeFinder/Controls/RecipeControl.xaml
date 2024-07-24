@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="RecipeFinder.Controls.RecipeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RecipeFinder.Controls"
+             xmlns:vm="clr-namespace:RecipeFinder.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100">
+    
+    <Grid DataContext="{StaticResource vm}"
+          Margin="5"
+          Background="White"
+          MaxWidth="200">
+        <StackPanel  Height="400"
+                    DataContext="Recipe">
+            <Image MaxWidth="200" MaxHeight="200"
+                Stretch="Uniform" x:Name="FoodImage" Source="https://w0.peakpx.com/wallpaper/1008/941/HD-wallpaper-pizza-fast-food-pizza-with-sausage-and-olives-food-concepts-background-with-pizza.jpg"></Image>
+            <TextBlock x:Name="FoodLabel" TextWrapping="Wrap" Margin="5 5 10 5" FontSize="20" FontFamily="Georgia"  Text="Mama mia" Foreground="Black"/>
+            
+            <TextBlock Margin="5" FontSize="12" FontWeight="Bold" Text="Ingredients: " FontFamily="Georgia" />
+
+            <ItemsControl x:Name="FoodIngredients">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock TextWrapping="Wrap" Margin="10 3 3 3" Text="{Binding}" Foreground="Black" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+
+        <Border Margin="5 10 10 5" CornerRadius="3" Background="#4267B2" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBlock Foreground="White" x:Name="FoodCuisine" TextAlignment="Center" FontSize="16" Text="indyjska" Padding="2 1 2 1"/>
+        </Border>
+
+        <Border Margin="5 35 10 5" CornerRadius="3" Background="#4267B2" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TextBlock Foreground="White" x:Name="FoodType" TextAlignment="Center" FontSize="16" Text="indyjska" Padding="2 1 2 1"/>
+        </Border>
+
+        
+        
+
+
+
+
+    </Grid>
+</UserControl>
